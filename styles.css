@@ -1,0 +1,58 @@
+
+
+#tausta {
+color: rgb(147, 147, 224);
+font-weight: bold;
+text-shadow: 'white';
+}
+.fire{
+  background: #F08030;
+}
+.grass{
+  background: #77C850;
+}
+.bug{
+  background: #A8B821;
+}
+.ground{
+  background: #E0C068;
+}
+.electric {
+  background: #F8D030;
+}
+.poison {
+  background: #A040A0;
+}
+.fighting {
+  background: #C03028;
+}
+.psychic{
+  background: #F85888;
+}
+.rock {
+  background: #B8A038;
+}
+.ghost {
+  background: #705898;
+}
+.steel{
+  background: #B8B8D0;
+}
+.ice{
+  background:#98D8D8;
+}
+.dark{
+  background: #705848;
+}
+.fairy{
+  background: #EE99AC;
+}
+.normal {
+  background: #A8A878;
+}
+.dragon {
+  background: #7038F8;
+}
+.flying {
+  background: #A890F0;
+}
