@@ -4,6 +4,7 @@ const form = document.querySelector('form');
 const nextButton = document.getElementById('next');
 const previousButton = document.getElementById('previous');
 
+//Sivu koostuu 12 kortista per sivu.
 var pokemonList = [];
 var firstCard = 1;
 var perPage = 12;
@@ -19,12 +20,13 @@ form.addEventListener('submit', event =>{
   console.log(inputValue);
   search(inputValue);
 });
-//Tässä on säädetty nappien avulla seuraavan ja edellisen sivun siirtymät
+
+//Tässä on säädetty nappien avulla seuraavan ja edellisen sivun siirtymät.
 nextButton.addEventListener('click',next);
 previousButton.addEventListener('click',previous);
 
 
-//Metodeilla kutsutaan ensimmäisestä kortista viimeiseen korttiin pokemon listalta
+//Metodeilla kutsutaan esiin ensimmäisestä kortista viimeiseen korttiin suoraan pokemon listalta.
 async function getPokemons() {
   for (let i = firstCard; i <= lastCard; i++) {
     pokemonList.push(await fetchPokemon(i));
@@ -53,7 +55,7 @@ function getTypes(pokemon) {
 function isPokemon(pokemon){
   return pokemon == pokemonList;
 }
-//Tästä haetaan annetun arvon mukaan pokemonit, jos ne toteutuu se tulee esiin renderöimällä, jos ei se antaa virheen!
+//Tästä haetaan annetun arvon mukaan pokemonit, jos ne toteutuu se tulee esiin renderöimällä, jos ei se antaa virheen alempana!
 async function search(value){
   pokemonsUl.innerHTML = '';
 
@@ -63,7 +65,7 @@ async function search(value){
     render();
     return
   }
-// Tässä siis fetch kokeilee, että oikea arvo on annettu muuten se antaa virheen.
+//Tässä siis fetch kokeilee, että oikea arvo on annettu muuten se antaa virheen.
   try{
     const pokemon = await fetchPokemon(value.toLowerCase());
     pokemonList = [];
@@ -79,7 +81,7 @@ async function search(value){
 }
 
 //Tässä tapahtuu se "renderöinti" jolloin tulee pokemoni esiin kortilla jossa on kuva, nimi ja tyyppi.
-//Koska on bootstrappi käytössä, niin en oikein halunnut siirtää sen html kohdalle, sillä ne kortit ilmestyy funktiolla.
+//Koska on bootstrappi käytössä, niin en oikein halunnut siirtää sen html kohdalle, sillä ne kortit ilmestyy tähän funktiolla.
 function render(){
     pokemonList.forEach((pokemon) =>{
       let typesHTML = getTypes(pokemon);
@@ -116,7 +118,7 @@ function init(){
 }
 
 
-//Tämä funktio kontrolloi, että seuraava sivu tulee esille. 250 korttiin edestä.
+//Tämä funktio kontrolloi, että seuraava sivu tulee esille. 250 kortin edestä.
 function next(){
   firstCard = lastCard + 1;
   lastCard = lastCard + perPage;
