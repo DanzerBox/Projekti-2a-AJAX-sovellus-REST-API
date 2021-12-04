@@ -1,10 +1,18 @@
+button{ 
+  margin: 10px;
+}
 
+h1, h3{
+  font-family: 'Cairo', sans-serif;
+}
 
 #tausta {
-color: rgb(147, 147, 224);
+color: #dc3545;
 font-weight: bold;
-text-shadow: 'white';
+font-family: 'Open Sans', sans-serif;
+font-size: medium;
 }
+
 .fire{
   background: #F08030;
 }

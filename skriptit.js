@@ -84,14 +84,19 @@ function render(){
     pokemonList.forEach((pokemon) =>{
       let typesHTML = getTypes(pokemon);
       pokemonsUl.innerHTML += 
-      `
+      `<style>
+      #zoom:hover {
+        transition: transform 1s;
+        transform: scale(1.35); 
+      }
+      </style>
         <li class="p-2 m-2 col-md-auto">
           <div class="card  border-0 shadow-sm" style="width: 18rem;">
             <div class="card-header">
-              <h6 class="card-subtitle mb-2 text-muted">Nº ${pokemon.id}</h6>
+              <h6 class="card-subtitle mb-2 text-muted"># Nº ${pokemon.id}</h6>
             </div>
             <div class="card-body">
-              <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
+              <img src="${pokemon.sprites.front_default}" class="card-img-top"  id="zoom" alt="${pokemon.name}">
               <div class="card-body">
                 <h5 class="card-tittle text-center text-capitalize">${pokemon.name}</h5>
                 ${typesHTML}
